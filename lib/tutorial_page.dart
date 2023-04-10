@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'login_page.dart';
 import 'home_page.dart';
 
 class TutorPage extends StatelessWidget {
@@ -13,6 +13,19 @@ class TutorPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.red,
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginPage()),
+                    (route) => false,
+              );
+            },
+            icon: const Icon(Icons.logout),
+            tooltip: 'Logout',
+          ),
+        ],
         title: const Text('Tutorial'),
       ),
       body: Column(

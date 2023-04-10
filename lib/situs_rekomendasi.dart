@@ -5,10 +5,15 @@ import 'login_page.dart';
 import 'situs_data.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class DaftarSitus extends StatelessWidget {
+class DaftarSitus extends StatefulWidget {
   final String username;
   const DaftarSitus({Key? key, required this.username}) : super(key: key);
 
+  @override
+  State<DaftarSitus> createState() => _DaftarSitusState();
+}
+
+class _DaftarSitusState extends State<DaftarSitus> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -35,6 +40,7 @@ class DaftarSitus extends StatelessWidget {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             itemBuilder: (context, index) {
               final SitusData list = listSitus[index];
+              final alreadyAdded = situsFavList.contains(list);
               return Card(
                 child: Column(
                   children: [
@@ -46,6 +52,23 @@ class DaftarSitus extends StatelessWidget {
                           },
                           child: Column(
                             children: [
+                              IconButton(
+                                  icon: new Icon(
+                                    Icons.favorite,
+                                    color: alreadyAdded ? Colors.red : Colors.grey,
+                                  ),
+                                  onPressed: ()
+                                  {
+                                    setState(() {
+                                      if(alreadyAdded) {
+                                        situsFavList.remove(list);
+                                      }
+                                      else {
+                                        situsFavList.add(list);
+                                      }
+                                    });
+                                  }
+                              ),
                               Image(
                                 height: 250,
                                 width: 150,
@@ -78,8 +101,8 @@ class DaftarSitus extends StatelessWidget {
             unselectedItemColor: Colors.white,// set the color of the unselected icons
             backgroundColor: Colors.red,
             onTap: (value) {
-              if (value == 0) Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage(username: username))) ;
-              if (value == 1) Navigator.push(context, MaterialPageRoute(builder: (context)=> TutorPage(username: username))) ;
+              if (value == 0) Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage(username: widget.username))) ;
+              if (value == 1) Navigator.push(context, MaterialPageRoute(builder: (context)=> TutorPage(username: widget.username))) ;
             },
 
             items: const <BottomNavigationBarItem>[
@@ -95,6 +118,7 @@ class DaftarSitus extends StatelessWidget {
           ),
         ));
   }
+
   Future<void> _launchUrl(String url) async {
     final Uri _url = Uri.parse(url);
     if (!await launchUrl(_url)) {

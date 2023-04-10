@@ -4,6 +4,7 @@ import 'package:flot/stopwatch_page.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
 import 'tutorial_page.dart';
+import 'favorit.dart';
 
 class HomePage extends StatefulWidget {
   final String username;
@@ -90,6 +91,8 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 16),
                 ElevatedButton.icon(
                   onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => Favorites(username: widget.username)));
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(

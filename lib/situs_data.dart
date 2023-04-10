@@ -48,3 +48,4 @@ var listSitus = [
     url: "https://scholar.google.com/",
   ),
 ];
+var situsFavList = [];
