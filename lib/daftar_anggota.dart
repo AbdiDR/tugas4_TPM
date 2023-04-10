@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'login_page.dart';
 import 'home_page.dart';
+import 'tutorial_page.dart';
 
 class MenuDaftarAnggota extends StatelessWidget {
   final String username;
@@ -101,12 +102,12 @@ class MenuDaftarAnggota extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.black87, // set the color of the selected icon
-        unselectedItemColor: Colors.black87,// set the color of the unselected icons
+        selectedItemColor: Colors.white, // set the color of the selected icon
+        unselectedItemColor: Colors.white,// set the color of the unselected icons
         backgroundColor: Colors.red,
         onTap: (value) {
           if (value == 0) Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage(username: username))) ;
-          if (value == 1) Navigator.push(context, MaterialPageRoute(builder: (context)=> MenuDaftarAnggota(username: username))) ;
+          if (value == 1) Navigator.push(context, MaterialPageRoute(builder: (context)=> TutorPage(username: username))) ;
         },
 
         items: const <BottomNavigationBarItem>[

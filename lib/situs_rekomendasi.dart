@@ -1,10 +1,9 @@
+import 'package:flot/tutorial_page.dart';
 import 'package:flutter/material.dart';
-import 'daftar_anggota.dart';
 import 'home_page.dart';
 import 'login_page.dart';
 import 'situs_data.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 
 class DaftarSitus extends StatelessWidget {
   final String username;
@@ -57,7 +56,13 @@ class DaftarSitus extends StatelessWidget {
                               const SizedBox(height: 5,),
                               Text(list.type),
                               const SizedBox(height: 20,),
-                              Text(list.descipton)
+                              Padding(
+                                padding: const EdgeInsets.only(top: 0, bottom: 0, left: 20, right: 20),
+                                child: Text(
+                                    list.descipton,
+                                    textAlign: TextAlign.justify
+                                ),
+                              )
                             ],
                           )
                       ),
@@ -69,12 +74,12 @@ class DaftarSitus extends StatelessWidget {
             itemCount: listSitus.length,
           ),
           bottomNavigationBar: BottomNavigationBar(
-            selectedItemColor: Colors.black87, // set the color of the selected icon
-            unselectedItemColor: Colors.black87,// set the color of the unselected icons
+            selectedItemColor: Colors.white, // set the color of the selected icon
+            unselectedItemColor: Colors.white,// set the color of the unselected icons
             backgroundColor: Colors.red,
             onTap: (value) {
               if (value == 0) Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage(username: username))) ;
-              if (value == 1) Navigator.push(context, MaterialPageRoute(builder: (context)=> MenuDaftarAnggota(username: username))) ;
+              if (value == 1) Navigator.push(context, MaterialPageRoute(builder: (context)=> TutorPage(username: username))) ;
             },
 
             items: const <BottomNavigationBarItem>[
