@@ -1,12 +1,12 @@
 import 'package:flot/daftar_anggota.dart';
 import 'package:flot/situs_rekomendasi.dart';
+import 'package:flot/stopwatch_page.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
+import 'tutorial_page.dart';
 
 class HomePage extends StatefulWidget {
-
   final String username;
-
   const HomePage({Key? key, required this.username}) : super(key: key);
 
   @override
@@ -14,12 +14,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Page'),
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.red,
         centerTitle: true,
         actions: [
@@ -62,6 +62,8 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 16),
                 ElevatedButton.icon(
                   onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => StopwatchPage(username: widget.username)));
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
@@ -108,7 +110,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.red,
         onTap: (value) {
           if (value == 0) Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage(username: widget.username))) ;
-          if (value == 1) Navigator.push(context, MaterialPageRoute(builder: (context)=> MenuDaftarAnggota(username: widget.username))) ;
+          if (value == 1) Navigator.push(context, MaterialPageRoute(builder: (context)=> TutorPage(username: widget.username))) ;
         },
 
         items: const <BottomNavigationBarItem>[
