@@ -9,7 +9,7 @@ class HomePage extends StatefulWidget {
 
   final String username;
 
-  HomePage({Key? key, required this.username}) : super(key: key);
+  const HomePage({Key? key, required this.username}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Page'),
+        title: const Text('Home Page'),
         backgroundColor: Colors.red,
         centerTitle: true,
         actions: [
@@ -29,11 +29,11 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
+                MaterialPageRoute(builder: (context) => const LoginPage()),
                     (route) => false,
               );
             },
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
             tooltip: 'Logout',
           ),
         ],
@@ -42,12 +42,11 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(child: Text('Selamat datang ' + widget.username, style: TextStyle(fontSize: 24))),
-            SizedBox(height: 20),
-            Text('Pilih menu:', style: TextStyle(fontSize: 18)),
-            SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Center(child: Text('Selamat datang ' + widget.username, style: const TextStyle(fontSize: 24))),
+            const SizedBox(height: 20),
+            const Text('Pilih menu:', style: TextStyle(fontSize: 18)),
+            const SizedBox(height: 40),
+            Column(
               children: [
                 ElevatedButton.icon(
                   onPressed: () {
@@ -55,47 +54,50 @@ class _HomePageState extends State<HomePage> {
                         context, MaterialPageRoute(builder: (_) => MenuDaftarAnggota(username: widget.username)));
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                         horizontal: 40.0, vertical: 40.0),
                     primary: Colors.red,
                   ),
-                  icon: Icon(Icons.account_box),  //icon data for elevated button
-                  label: Text("Daftar anggota"), //label text
+                  icon: const Icon(Icons.account_box),  //icon data for elevated button
+                  label: const Text("Daftar anggota"), //label text
                 ),
+                const SizedBox(height: 16),
                 ElevatedButton.icon(
                   onPressed: () {
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                         horizontal: 40.0, vertical: 40.0),
                     primary: Colors.red,
                   ),
-                  icon: Icon(Icons.timer),  //icon data for elevated button
-                  label: Text("Aplikasi Stopwach"), //label text
+                  icon: const Icon(Icons.timer),  //icon data for elevated button
+                  label: const Text("Aplikasi Stopwach"), //label text
                 ),
+                const SizedBox(height: 16),
                 ElevatedButton.icon(
                   onPressed: () {
                     Navigator.push(
                         context, MaterialPageRoute(builder: (_) => DaftarSitus(username: widget.username)));
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                         horizontal: 40.0, vertical: 40.0),
                     primary: Colors.red,
                   ),
-                  icon: Icon(Icons.book),  //icon data for elevated button
-                  label: Text("Daftar situs"), //label text
+                  icon: const Icon(Icons.book),  //icon data for elevated button
+                  label: const Text("Daftar situs"), //label text
                 ),
+                const SizedBox(height: 16),
                 ElevatedButton.icon(
                   onPressed: () {
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                         horizontal: 40.0, vertical: 40.0),
                     primary: Colors.red,
                   ),
-                  icon: Icon(Icons.favorite),  //icon data for elevated button
-                  label: Text("Favorite"), //label text
+                  icon: const Icon(Icons.favorite),  //icon data for elevated button
+                  label: const Text("Favorite"), //label text
                 ),
               ],
             ),

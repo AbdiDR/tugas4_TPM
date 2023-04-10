@@ -2,6 +2,8 @@ import 'package:flot/home_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -34,13 +36,13 @@ class _LoginPageState extends State<LoginPage> {
                 ('../assets/loginPicture.jpg'),
               ),
             ),
-            SizedBox(height: 10),
-            Text('Login',
+            const SizedBox(height: 10),
+            const Text('Login',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
                     color: Colors.black)),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             Center(
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 5),
@@ -48,20 +50,20 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 35),
-                      child: Container(
+                      child: SizedBox(
                         width: 300,
                         child: TextFormField(
-                          cursorColor: Color(0xffc1071e),
-                          style: TextStyle(fontSize: 15, color: Colors.black),
+                          cursorColor: const Color(0xffc1071e),
+                          style: const TextStyle(fontSize: 15, color: Colors.black),
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.people),
+                            prefixIcon: const Icon(Icons.people),
                             filled: true,
                             fillColor: Colors.white24,
                             labelText: 'Username',
-                            labelStyle: TextStyle(color: Colors.black),
+                            labelStyle: const TextStyle(color: Colors.black),
                             hintText: 'Input your Username',
-                            hintStyle: TextStyle(color: Colors.grey),
+                            hintStyle: const TextStyle(color: Colors.grey),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(5),
                               borderSide: const BorderSide(
@@ -71,8 +73,8 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
-                              borderSide: BorderSide(
-                                color: Color(0xffffF5C518),
+                              borderSide: const BorderSide(
+                                color: Color(0xfffff5c518),
                                 width: 2.0,
                               ),
                             ),
@@ -83,33 +85,33 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 35),
-                      child: Container(
+                      child: SizedBox(
                         width: 300,
                         child: TextFormField(
-                          style: TextStyle(fontSize: 15, color: Colors.black),
+                          style: const TextStyle(fontSize: 15, color: Colors.black),
                           obscureText: _isObscure,
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.lock),
+                            prefixIcon: const Icon(Icons.lock),
                             filled: true,
                             fillColor: Colors.white24,
                             labelText: 'Password',
-                            labelStyle: TextStyle(color: Colors.black),
+                            labelStyle: const TextStyle(color: Colors.black),
                             hintText: 'Input your Password',
-                            hintStyle: TextStyle(color: Colors.grey),
+                            hintStyle: const TextStyle(color: Colors.grey),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(5),
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.red,
                                 width: 1.0,
                               ),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(20),
-                              borderSide: BorderSide(
-                                color: Color(0xffffF5C518),
+                              borderSide: const BorderSide(
+                                color: Color(0xfffff5c518),
                                 width: 2.0,
                               ),
                             ),
@@ -120,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Padding(
@@ -144,16 +146,16 @@ class _LoginPageState extends State<LoginPage> {
                               }
                               SnackBar snackBar = SnackBar(
                                 content: Text(text),
-                                duration: Duration(seconds: 2),
+                                duration: const Duration(seconds: 2),
                                 backgroundColor: (_isObscure) ? Colors.green : Colors.red,
                               );
                               ScaffoldMessenger.of(context)
                                   .showSnackBar(snackBar);
                             },
                             child:
-                            Text('Login', style: TextStyle(fontSize: 15)),
+                            const Text('Login', style: TextStyle(fontSize: 15)),
                             style: ElevatedButton.styleFrom(
-                              primary: Color(0xffc1071e),
+                              primary: const Color(0xffc1071e),
                             ),
                           );
                         }),

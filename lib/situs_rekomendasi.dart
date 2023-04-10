@@ -15,7 +15,7 @@ class DaftarSitus extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: Text("Situs Rekomendasi"),
+            title: const Text("Situs Rekomendasi"),
             backgroundColor: Colors.red,
             centerTitle: true,
             actions: [
@@ -23,17 +23,17 @@ class DaftarSitus extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
                         (route) => false,
                   );
                 },
-                icon: Icon(Icons.logout),
+                icon: const Icon(Icons.logout),
                 tooltip: 'Logout',
               ),
             ],
           ),
           body: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             itemBuilder: (context, index) {
               final SitusData list = listSitus[index];
               return Card(
@@ -52,11 +52,11 @@ class DaftarSitus extends StatelessWidget {
                                 width: 150,
                                 image: NetworkImage(list.image),
                               ),
-                              SizedBox(height:10.0),
+                              const SizedBox(height:10.0),
                               Text(list.name, style: const TextStyle(fontWeight: FontWeight.bold)),
-                              SizedBox(height: 5,),
+                              const SizedBox(height: 5,),
                               Text(list.type),
-                              SizedBox(height: 20,),
+                              const SizedBox(height: 20,),
                               Text(list.descipton)
                             ],
                           )
