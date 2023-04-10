@@ -71,6 +71,7 @@ class DaftarSitus extends StatelessWidget {
           bottomNavigationBar: BottomNavigationBar(
             selectedItemColor: Colors.black87, // set the color of the selected icon
             unselectedItemColor: Colors.black87,// set the color of the unselected icons
+            backgroundColor: Colors.red,
             onTap: (value) {
               if (value == 0) Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage(username: username))) ;
               if (value == 1) Navigator.push(context, MaterialPageRoute(builder: (context)=> MenuDaftarAnggota(username: username))) ;
