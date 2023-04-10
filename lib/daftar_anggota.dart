@@ -6,13 +6,13 @@ import 'home_page.dart';
 class MenuDaftarAnggota extends StatelessWidget {
   final String username;
 
-  MenuDaftarAnggota({Key? key, required this.username}) : super(key: key);
+  const MenuDaftarAnggota({Key? key, required this.username}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Daftar angggota'),
+        title: const Text('Daftar angggota'),
         backgroundColor: Colors.red,
         centerTitle: true,
         actions: [
@@ -20,11 +20,11 @@ class MenuDaftarAnggota extends StatelessWidget {
             onPressed: () {
               Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
+                MaterialPageRoute(builder: (context) => const LoginPage()),
                     (route) => false,
               );
             },
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
             tooltip: 'Logout',
           ),
         ],
@@ -43,7 +43,7 @@ class MenuDaftarAnggota extends StatelessWidget {
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 10,
                           blurRadius: 5,
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                         ),
                       ],
                     ),

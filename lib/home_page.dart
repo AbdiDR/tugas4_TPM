@@ -1,8 +1,6 @@
 import 'package:flot/daftar_anggota.dart';
 import 'package:flot/situs_rekomendasi.dart';
 import 'package:flutter/material.dart';
-
-
 import 'login_page.dart';
 
 class HomePage extends StatefulWidget {
