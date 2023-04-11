@@ -1,7 +1,4 @@
-import 'package:flot/tutorial_page.dart';
 import 'package:flutter/material.dart';
-import 'home_page.dart';
-import 'login_page.dart';
 import 'situs_data.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -22,19 +19,6 @@ class _DaftarSitusState extends State<DaftarSitus> {
             title: const Text("Situs Rekomendasi"),
             backgroundColor: Colors.red,
             centerTitle: true,
-            actions: [
-              IconButton(
-                onPressed: () {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()),
-                        (route) => false,
-                  );
-                },
-                icon: const Icon(Icons.logout),
-                tooltip: 'Logout',
-              ),
-            ],
           ),
           body: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
@@ -53,7 +37,7 @@ class _DaftarSitusState extends State<DaftarSitus> {
                           child: Column(
                             children: [
                               IconButton(
-                                  icon: new Icon(
+                                  icon: Icon(
                                     Icons.favorite,
                                     color: alreadyAdded ? Colors.red : Colors.grey,
                                   ),
@@ -96,27 +80,8 @@ class _DaftarSitusState extends State<DaftarSitus> {
             },
             itemCount: listSitus.length,
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            selectedItemColor: Colors.white, // set the color of the selected icon
-            unselectedItemColor: Colors.white,// set the color of the unselected icons
-            backgroundColor: Colors.red,
-            onTap: (value) {
-              if (value == 0) Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage(username: widget.username))) ;
-              if (value == 1) Navigator.push(context, MaterialPageRoute(builder: (context)=> TutorPage(username: widget.username))) ;
-            },
-
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'HOME PAGE',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: 'TUTORIAL',
-              ),
-            ],
-          ),
-        ));
+        )
+    );
   }
 
   Future<void> _launchUrl(String url) async {
