@@ -32,10 +32,7 @@ class TutorPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           SizedBox(height: 16),
-          Text('Welcome to our app,'
-              ' This application is an assignment for the IF-H class mobile programming techniques course.'
-              ' In this application you have several functions, starting from login page'
-              ' On the login page the user must enter the correct username and password to proceed to the next page.'),
+          Text('Selamat datang di aplikasi Stopwatch dan Penyedia Link situs'),
           SizedBox(height: 20),
           Text(
             'The next page is the main menu page where there will be 4 choices of feature pages and at the bottom there will be 3 other page choices ',

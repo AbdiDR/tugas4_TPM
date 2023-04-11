@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'login_page.dart';
-import 'home_page.dart';
-import 'tutorial_page.dart';
-
 class MenuDaftarAnggota extends StatelessWidget {
   final String username;
 
@@ -16,19 +12,6 @@ class MenuDaftarAnggota extends StatelessWidget {
         title: const Text('Daftar angggota'),
         backgroundColor: Colors.red,
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginPage()),
-                    (route) => false,
-              );
-            },
-            icon: const Icon(Icons.logout),
-            tooltip: 'Logout',
-          ),
-        ],
       ),
       body: Center(
         child: Padding(
@@ -100,26 +83,6 @@ class MenuDaftarAnggota extends StatelessWidget {
                   ),
                 ]),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.white, // set the color of the selected icon
-        unselectedItemColor: Colors.white,// set the color of the unselected icons
-        backgroundColor: Colors.red,
-        onTap: (value) {
-          if (value == 0) Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage(username: username))) ;
-          if (value == 1) Navigator.push(context, MaterialPageRoute(builder: (context)=> TutorPage(username: username))) ;
-        },
-
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'HOME PAGE',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'TUTORIAL',
-          ),
-        ],
       ),
     );
   }

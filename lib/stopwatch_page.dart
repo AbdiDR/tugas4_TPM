@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
-import 'home_page.dart';
-import 'tutorial_page.dart';
 
 class StopwatchPage extends StatefulWidget {
   final String username;
@@ -68,26 +66,6 @@ class _MyAppState extends State<StopwatchPage> {
             resetButton(),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.white, // set the color of the selected icon
-        unselectedItemColor: Colors.white,// set the color of the unselected icons
-        backgroundColor: Colors.red,
-        onTap: (value) {
-          if (value == 0) Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage(username: widget.username))) ;
-          if (value == 1) Navigator.push(context, MaterialPageRoute(builder: (context)=> TutorPage(username: widget.username))) ;
-        },
-
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'HOME PAGE',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'TUTORIAL',
-          ),
-        ],
       ),
     );
   }
