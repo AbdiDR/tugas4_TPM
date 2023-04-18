@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 50.0, vertical: 40.0),
+                        horizontal: 40.0, vertical: 20.0),
                     primary: Colors.red,
                   ),
                   icon: const Icon(Icons.account_box),  //icon data for elevated button
@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 40.0, vertical: 40.0),
+                        horizontal: 30.0, vertical: 20.0),
                     primary: Colors.red,
                   ),
                   icon: const Icon(Icons.timer),  //icon data for elevated button
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 60.0, vertical: 40.0),
+                        horizontal: 53.0, vertical: 20.0),
                     primary: Colors.red,
                   ),
                   icon: const Icon(Icons.book),  //icon data for elevated button
@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 70.0, vertical: 40.0),
+                        horizontal: 65.0, vertical: 20.0),
                     primary: Colors.red,
                   ),
                   icon: const Icon(Icons.favorite),  //icon data for elevated button

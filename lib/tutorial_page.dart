@@ -28,54 +28,49 @@ class TutorPage extends StatelessWidget {
         ],
         title: const Text('Tutorial'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          SizedBox(height: 16),
-          Text('Selamat datang di aplikasi Stopwatch dan Penyedia Link situs'),
-          SizedBox(height: 20),
-          Text(
-            'The next page is the main menu page where there will be 4 choices of feature pages and at the bottom there will be 3 other page choices ',
-            textAlign: TextAlign.justify,
-          ),
-          SizedBox(height: 10),
-          Text(
-            'The first feature is a page to see a list of our group members',
-            textAlign: TextAlign.justify,
-          ),
-          SizedBox(height: 10),
-          Text(
-            'You can see our recommendation sites in some game by clicked in recommendation sites,'
-                ' In this recommendation sites you can visit the game link and also add it to you favorite.',
-            textAlign: TextAlign.justify,
-          ),
-          SizedBox(height: 10),
-          Text(
-            'The second feature is a simple stopwatch where the way to use it is:'
-                '1. press the start button'
-                '2. if you want to stop just press the stop button'
-                '3. if you want to reset just press the restart button',
-            textAlign: TextAlign.justify,
-          ),
-          SizedBox(height: 10),
-          Text(
-            'The third feature is the recommendation site page where there will be several sites that we recommend and users can open the site which will be directed to the site page. Users can also make sites that users like into favorites by simply pressing the heart button on the site according to the site.',
-            textAlign: TextAlign.justify,
-          ),
-          SizedBox(height: 10),
-          Text(
-            'Then continued the last feature, namely the list of sites that have become favorite sites'
-                'For other page options, there is a menu page which is the initial page'
-                'Then there is a tutorial page that the user is now reading'
-                'The last is the logout page for users to exit back to the login page',
-            textAlign: TextAlign.justify,
-          ),
-          SizedBox(height: 10),
-          Text(
-            'Thank you for using our application -Author',
-            textAlign: TextAlign.center,
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            SizedBox(height: 16),
+            Text(
+              'Selamat datang di Aplikasi Stopwatch dan Penyedia Link Situs',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Aplikasi ini terdiri dari 4 menu utama di Homepage dan bottom navbar untuk berpindah halaman.',
+              textAlign: TextAlign.justify,
+            ),
+            SizedBox(height: 10),
+            Text(
+              'Menu pertama yaitu menu Daftar Anggota yang akan menampikan profil anggota kelompok.',
+              textAlign: TextAlign.justify,
+            ),
+            SizedBox(height: 10),
+            Text(
+              'Menu kedua yaitu menu Stopwatch, adapun penjelasan menu tersebut yaitu sebaga berikut:\n'
+                  '1. tersedia 3 tombol pada menu Stopwatch, yaitu tombol Start, Stop, dan Reset\n'
+                  '2. tombol start berfungsi untuk memulai hitungan Stopwatch dimulai dari detik ke 0\n'
+                  '3. tombol stop berfungsi untuk menghentikan hitungan Stopwatch, dan dapat dilanjutkan lagi jika menekan tombol start'
+                  '4. tombol reset berfungsi untuk mengulangi hitungan Stopwatch',
+              textAlign: TextAlign.justify,
+            ),
+            SizedBox(height: 10),
+            Text(
+              'Menu ketiga yaitu menu Daftar Situs yang kami rekomendasikan berisi bahan-bahan untuk belajar. Saat pengguna menekan card situs pada menu, pengguna akan langsung diarahkan menuju website resmi situs yang dapat dibuka mengggunakan browser pengguna. Pengguna juga dapat menekan tombol dengan simbol hati pada setiap cardview. Hal tersebut berarti bahwa pengguna akan menyimpan situs tersebut ke daftar situs favorut yang dapat diakses pada menu 4.',
+              textAlign: TextAlign.justify,
+            ),
+            SizedBox(height: 10),
+            Text(
+              'Thank you for using our application -Author',
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.white, // set the color of the selected icon

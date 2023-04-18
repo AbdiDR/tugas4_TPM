@@ -43,13 +43,23 @@ class _DaftarSitusState extends State<DaftarSitus> {
                                   ),
                                   onPressed: ()
                                   {
+                                    String text = '';
                                     setState(() {
                                       if(alreadyAdded) {
                                         situsFavList.remove(list);
+                                        text  = "Berhasil dihapus";
                                       }
                                       else {
                                         situsFavList.add(list);
+                                        text = "Berhasil ditambahkan";
                                       }
+                                      SnackBar snackBar = SnackBar(
+                                        content: Text(text),
+                                        duration: const Duration(seconds: 1),
+                                        backgroundColor: (alreadyAdded) ? Colors.black : Colors.green,
+                                      );
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(snackBar);
                                     });
                                   }
                               ),
